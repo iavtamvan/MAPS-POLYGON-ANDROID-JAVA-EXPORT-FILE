@@ -100,36 +100,28 @@ public class MainActivity extends AppCompatActivity implements
             PrintWriter pw = new PrintWriter(f);
             pw.println("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
             pw.println("<kml xmlns=\"http://www.opengis.net/kml/2.2\">");
-            pw.println("<Document>\n" +
-                    "    <name>Paths</name>\n" +
-                    "    <description>Examples of paths. Note that the tessellate tag is by default\n" +
-                    "      set to 0. If you want to create tessellated lines, they must be authored\n" +
-                    "      (or edited) directly in KML.</description>\n" +
-                    "    <Style id=\"yellowLineGreenPoly\">");
-            pw.println("<LineStyle>\n" +
-                    "        <color>7f00ffff</color>\n" +
-                    "        <width>4</width>\n" +
-                    "      </LineStyle>\n" +
-                    "      <PolyStyle>\n" +
-                    "        <color>7f00ff00</color>\n" +
-                    "      </PolyStyle>\n" +
-                    "    </Style>\n" +
-                    "    <Placemark>\n" +
-                    "      <name>Absolute Extruded</name>\n" +
-                    "      <description>Transparent green wall with yellow outlines</description>\n" +
-                    "      <styleUrl>#yellowLineGreenPoly</styleUrl>\n" +
-                    "      <LineString>\n" +
-                    "        <extrude>1</extrude>\n" +
-                    "        <tessellate>1</tessellate>\n" +
-                    "        <altitudeMode>absolute</altitudeMode>");
+            pw.println("  <Placemark>\n" +
+                    "    <name>The Pentagon</name>\n" +
+                    "    <Polygon>\n" +
+                    "      <extrude>1</extrude>\n" +
+                    "      <altitudeMode>relativeToGround</altitudeMode>\n" +
+                    "      <outerBoundaryIs>\n" +
+                    "        <LinearRing>");
             pw.println(" <coordinates>");
-            pw.println(""); // disini array untuk lat long nya
+            pw.println(""); // array koordinat 1
             pw.println("</coordinates>\n" +
-                    "      </LineString>\n" +
-                    "    </Placemark>\n" +
-                    "  </Document>\n" +
+                    "        </LinearRing>\n" +
+                    "      </outerBoundaryIs>\n" +
+                    "      <innerBoundaryIs>\n" +
+                    "        <LinearRing>");
+            pw.println("<coordinates>");
+            pw.println("");// array koordinat 2
+            pw.println("</coordinates>\n" +
+                    "        </LinearRing>\n" +
+                    "      </innerBoundaryIs>\n" +
+                    "    </Polygon>\n" +
+                    "  </Placemark>\n" +
                     "</kml>");
-            pw.println("Hello");
             pw.flush();
             pw.close();
             f.close();
