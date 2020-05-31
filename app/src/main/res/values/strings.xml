@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">PolyLineAndroid</string>
+    <string name="square_meters">\u0020 m^2</string>
+    <string name="meters">\u0020 m</string>
+    <string name="area_polygon_label">Area Polygons:\u0020</string>
+    <string name="length_polyline_label">Length Polylines:\u0020</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
